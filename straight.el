@@ -4838,7 +4838,9 @@ repository. Also note that native compilation occurs
 asynchronously, and will continue in the background after
 `straight-use-package' returns."
   (when (and (fboundp 'native-compile-async)
-             (member 'straight--build-compile straight--build-functions))
+           (member 'straight--build-compile straight--build-functions)
+           (fboundp 'native-comp-available-p)
+           (native-comp-available-p))
     (require 'comp)
     (straight--with-plist recipe (package)
       ;; Queue compilation for this package
