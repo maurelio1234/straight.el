@@ -4837,6 +4837,8 @@ function only modifies the build folder, not the original
 repository. Also note that native compilation occurs
 asynchronously, and will continue in the background after
 `straight-use-package' returns."
+  (message "straight--build-native-compile: native fbound? %s" (fboundp 'native-comp-available-p))
+  (message "straight--build-native-compile: native avail? %s" (native-comp-available-p))
   (when (and (fboundp 'native-compile-async)
            (member 'straight--build-compile straight--build-functions)
            (fboundp 'native-comp-available-p)

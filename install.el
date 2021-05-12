@@ -146,7 +146,7 @@
         (url-retrieve-synchronously
          (format
           (concat "https://raw.githubusercontent.com/"
-                  "raxod502/straight.el/install/%s/straight.el")
+                  "maurelio1234/straight.el/install/%s/straight.el")
           (substring (symbol-name version) 1))
          'silent 'inhibit-cookies)
       ;; In case of 404, that means the version identifier is unknown.
@@ -195,7 +195,7 @@
                       :repo ,(format
                               "%s/straight.el"
                               (or (bound-and-true-p straight-repository-user)
-                                  "raxod502"))
+                                  "maurelio1234"))
                       :branch ,(or (bound-and-true-p
                                     straight-repository-branch)
                                    "master")))
